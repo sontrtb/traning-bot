@@ -8,7 +8,6 @@ import os
 import joblib
 import json
 from datetime import datetime
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 class FinancialPredictor:
     def __init__(self, window_size=100, epochs=100):
