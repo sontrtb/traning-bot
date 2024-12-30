@@ -260,7 +260,7 @@ class FinancialPredictor:
         if 'training_history' in params:
             instance.training_history = params['training_history']
         
-        print(f"Đã tải mô hình từ: {directory_path}")
+        print(f"\nĐã tải mô hình từ: {directory_path}")
             
         return instance
     
@@ -386,52 +386,6 @@ class FinancialPredictor:
                 }
             }
             return result
-        
-    def plot_predictions(self, predictions, history=None, feature_names=None):
-        """Vẽ đồ thị kết quả dự đoán
-
-        Parameters:
-        -----------
-        predictions : numpy.ndarray
-            Mảng các giá trị dự đoán
-        history : numpy.ndarray, optional
-            Dữ liệu lịch sử
-        feature_names : list, optional
-            Tên các đặc trưng
-        """
-        if feature_names is None:
-            if hasattr(self, 'data'):
-                feature_names = self.data.columns
-            else:
-                feature_names = [f'Feature {i+1}' for i in range(predictions.shape[1])]
-
-        n_features = len(feature_names)
-        fig, axes = plt.subplots(n_features, 1, figsize=(12, 4*n_features))
-        if n_features == 1:
-            axes = [axes]
-
-        x_pred = range(len(predictions))
-
-        
-        
-        for i, (ax, feature) in enumerate(zip(axes, feature_names)):
-            if history is not None:
-                x_hist = range(-len(history), 0)
-                ax.plot(x_hist, history[:, i], 'b-', label='Lịch sử')
-                
-            ax.plot(x_pred, predictions[:, i], 'r--', label='Dự đoán')
-            ax.axvline(x=0, color='g', linestyle=':', label='Thời điểm hiện tại')
-            
-            ax.set_title(f'{feature}')
-            ax.set_xlabel('Bước thời gian')
-            ax.set_ylabel('Giá trị')
-            ax.legend()
-            ax.grid(True)
-
-        current_time = datetime.now().strftime("%H:%M:%S %d-%m-%Y")
-        plt.title(f"Thời gian: {current_time}", fontsize=14)
-        plt.tight_layout()
-        plt.show()
 
     def plot_training_metrics(self):
         """Vẽ đồ thị các metrics qua các lần cập nhật"""

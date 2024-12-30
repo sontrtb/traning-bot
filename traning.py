@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 from get_data import GetData
 from model import FinancialPredictor
 
-
 class Traning:
     def __init__(self, symbol="IOTAUSDT"):
         self.symbol = symbol

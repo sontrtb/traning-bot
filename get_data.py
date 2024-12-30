@@ -22,7 +22,7 @@ class GetData:
     def get_data(self):
         symbol = self.symbol
         timeframe = '15m'
-        limit = 48 if self.is_now else 96
+        limit = 96
 
         try:
             # Lấy dữ liệu từ API Binance
