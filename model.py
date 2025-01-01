@@ -414,31 +414,6 @@ class FinancialPredictor:
         plt.tight_layout()
         plt.show()
 
-    
-# Huấn luyện và lưu mô hình
-# predictor = FinancialPredictor(window_size=100, epochs=100)
-# data = predictor.load_multiple_files("data")
-# X_scaled, y_scaled = predictor.preprocess_data()
-# model = predictor.build_model()
-# history = predictor.train()
-# predictor.save_model("saved_model")
-
-# # Sau này, tải và sử dụng mô hình đã lưu
-# loaded_predictor = FinancialPredictor.load_model("saved_model")
-# prediction = loaded_predictor.predict_from_file("data/data_test.csv")
-
-# Ví dụ sử dụng Update Model:
-
-# # 1. Tải mô hình đã huấn luyện
-# predictor = FinancialPredictor.load_model("saved_model")
-
-# # 2. Cập nhật với một file dữ liệu mới
-# history = predictor.update_model(
-#     new_data_path="new_data.csv",
-#     epochs=50,
-#     save_dir="updated_model"
-# )
-
 # 3. Cập nhật với nhiều file
 # new_files = ["data1.csv", "data2.csv", "data3.csv"]
 # history = predictor.update_model(
@@ -449,25 +424,3 @@ class FinancialPredictor:
 
 # 4. Xem lịch sử các lần cập nhật
 # predictor.plot_training_metrics()
-
-
-# Tải mô hình
-# predictor = FinancialPredictor.load_model("saved_model")
-
-# # Dự đoán 10 bước tiếp theo từ file
-# steps = 10
-# result = predictor.predict_multiple_from_file(
-#     "data/data_test.csv",
-#     steps=10,
-#     include_history=True
-# )
-
-# print("\nKêt quả {steps} bước tiếp theo:\n")
-# print(result['predictions'])
-
-# # Vẽ đồ thị kết quả
-# predictor.plot_predictions(
-#     result['predictions'],
-#     result['history'],
-#     feature_names=['Price', 'Volume', 'RSI']
-# )
