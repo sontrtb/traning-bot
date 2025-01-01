@@ -32,13 +32,13 @@ def run():
 
 
 # getDataTrain()
-traningModel()
+# traningModel()
 
-# run()
+run()
 
 # Lên lịch chạy job mỗi {interval} giây
-schedule.every(interval).seconds.do(run)
+# schedule.every(interval).seconds.do(run)
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)

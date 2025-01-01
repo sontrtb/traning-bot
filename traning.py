@@ -5,10 +5,10 @@ from model import FinancialPredictor
 class Traning:
     def __init__(self, symbol="IOTAUSDT"):
         self.symbol = symbol
-        self.window_size = 48
+        self.window_size = 96
         self.days_back = 1
         self.iterations = 300
-        self.epochs = 50
+        self.epochs = 150
     
     # Lấy dữ liệu về
     def getDataTrain(self):

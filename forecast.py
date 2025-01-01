@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from get_data import GetData
 from model import FinancialPredictor
-from colorama import Fore, Back, Style
+from colorama import Fore
 
 class Forecast:
     def __init__(self, symbol="IOTAUSDT", steps=5):
